@@ -1,5 +1,5 @@
 // Lucas Randal N°18 e Flavia Glenda N°04
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Alert, Pressable, TextInput, Modal} from "react-native";
 import * as DocumentPicker from "expo-document-picker";
 import s3 from '../../awsConfig';
