@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// Lucas Randal N°18 e Flavia Glenda N°04
+import 'react-native-gesture-handler';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import PaginaPrincipal from './src/screens/PaginaPrincipal.js';
+import ListarJogadores from './src/screens/ListarJogadores.js';
+import UploadImagens from './src/screens/UploadImagens.js';
+import UploadVideos from './src/screens/UploadVideos.js';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const Stack = createNativeStackNavigator();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = () => (
+  <NavigationContainer>
+    -<Stack.Navigator initialRouteName="PaginaPrincipal" screenOptions={{headerShown: false}}>
+      <Stack.Screen name="PaginaPrincipal" component={PaginaPrincipal} />
+      <Stack.Screen name="ListarJogadores" component={ListarJogadores} />
+      <Stack.Screen name="UploadImagens" component={UploadImagens} />
+      <Stack.Screen name="UploadVideos" component={UploadVideos} />
+    </Stack.Navigator>
+  </NavigationContainer>
+);
+
+export default App;
